@@ -26,6 +26,7 @@ const createIncompleteList = (text) => {
   //button(完了)タグ作成
   const completeButton = document.createElement("button");
   completeButton.innerText = "完了";
+  //button(完了)が押された場合のイベント
   completeButton.addEventListener("click", () => {
     //押された完了ボタンの親タグ(div)を未完了リストから削除
     deleteFromcompleteList(completeButton.parentNode);
@@ -43,9 +44,10 @@ const createIncompleteList = (text) => {
     const li = document.createElement("li");
     li.innerText = text;
 
-    //butotonタグ生成
+    //butoton(戻す)タグ生成
     const backButton = document.createElement("button");
     backButton.innerText = "戻す";
+    //button(戻す)が押された場合のイベント
     backButton.addEventListener("click", () => {
       //押された戻すボタンの親タグ(div)を完了リストから削除
       const deleteTarget = backButton.parentNode;
@@ -67,6 +69,7 @@ const createIncompleteList = (text) => {
   //button(削除)タグ作成
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "削除";
+  //button(削除)が押された場合のイベント
   deleteButton.addEventListener("click", () => {
     //押された削除ボタンの親タグ(div)を未完了リストから削除
     deleteFromcompleteList(deleteButton.parentNode);
@@ -81,6 +84,7 @@ const createIncompleteList = (text) => {
   document.getElementById("incomplete-list").appendChild(div);
 };
 
+//button(追加)が押された場合に、onClickAddイベントが発生
 document
   .getElementById("add-button")
   .addEventListener("click", () => onClickAdd());
